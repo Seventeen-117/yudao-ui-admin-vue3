@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  jiangyang-ui-admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jiangyang-ui-admin
+    ports:
+      - "80:80"
+    environment:
+      - API_URL=http://localhost:48080 # 修改为实际的后端API地址
+    restart: unless-stopped 
